@@ -127,8 +127,8 @@
 <div class="hidden md:flex items-center gap-6">
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Mistral Integration</a>
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Documentation</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">GitHub</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Discord</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="https://github.com/beamcore">GitHub</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="https://discord.gg/VuyQ6hznp">Discord</a>
 </div>
 </div>
 <button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-body-md hover:opacity-90 transition-all">
@@ -158,14 +158,14 @@
 </div>
 </div>
 <div class="flex flex-wrap gap-4">
-<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-body-md flex items-center gap-2 hover:opacity-90 transition-all">
+<a href="https://github.com/beamcore" class="bg-primary text-on-primary px-8 py-3 rounded-lg font-body-md flex items-center gap-2 hover:opacity-90 transition-all inline-flex">
 <span class="material-symbols-outlined !text-[18px]">terminal</span>
                         View on GitHub
-                    </button>
-<button class="border border-outline-variant text-primary px-8 py-3 rounded-lg font-body-md flex items-center gap-2 hover:bg-surface-container transition-all">
+                    </a>
+<a href="https://discord.gg/VuyQ6hznp" class="border border-outline-variant text-primary px-8 py-3 rounded-lg font-body-md flex items-center gap-2 hover:bg-surface-container transition-all inline-flex">
 <span class="material-symbols-outlined !text-[18px]">forum</span>
                         Join Discord
-                    </button>
+                    </a>
 </div>
 </div>
 <!-- Technical Detail: Grid Overlay -->
@@ -272,45 +272,43 @@
 </div>
 </div>
 </section>
-<!-- Pure Elixir Section -->
+<!-- Modular Architecture Section -->
 <section class="py-24 border-y border-outline-variant bg-white">
 <div class="max-w-max-width mx-auto px-margin-desktop">
 <div class="text-center mb-16">
-<h2 class="font-headline-md text-headline-md text-primary mb-4">Pure Elixir DSL</h2>
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Modular Architecture</h2>
 <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">
-                        Declarative agent definitions that feel like native Elixir. No complex abstractions, just clean code.
+                        Distributed network of agents with shared memory and centralized logging.
                     </p>
 </div>
-<div class="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-outline-variant">
-<!-- Code Header -->
-<div class="bg-surface-container px-6 py-3 border-b border-outline-variant flex items-center justify-between">
-<div class="flex gap-2">
-<div class="w-3 h-3 rounded-full bg-outline-variant"></div>
-<div class="w-3 h-3 rounded-full bg-outline-variant"></div>
-<div class="w-3 h-3 rounded-full bg-outline-variant"></div>
-</div>
-<span class="font-label-caps text-label-caps text-on-surface-variant">lib/my_app/researcher.ex</span>
-<button class="text-on-surface-variant hover:text-primary flex items-center gap-1 transition-colors">
-<span class="material-symbols-outlined !text-[16px]">content_copy</span>
-<span class="font-label-caps text-[10px]">COPY</span>
-</button>
-</div>
-<!-- Code Content -->
-<div class="bg-surface-container-low p-8 font-code-md text-code-md leading-relaxed text-on-surface overflow-x-auto">
-<pre><code><span class="text-secondary">defmodule</span> <span class="text-primary font-semibold">MyApp.Researcher</span> <span class="text-secondary">do</span>
-  <span class="text-on-tertiary-fixed-variant">use</span> <span class="text-primary font-semibold">Beamcore.Agent</span>, <span class="text-on-primary-container">model:</span> <span class="text-on-secondary-fixed-variant">:mistral_large</span>
-
-  <span class="text-on-tertiary-fixed-variant">agent_config</span> <span class="text-secondary">do</span>
-    <span class="text-on-primary-container">temperature</span> <span class="text-on-tertiary-fixed-variant">0.7</span>
-    <span class="text-on-primary-container">max_tokens</span> <span class="text-on-tertiary-fixed-variant">2048</span>
-    <span class="text-on-primary-container">system_prompt</span> <span class="text-on-secondary-fixed-variant">"You are an expert systems researcher."</span>
-  <span class="text-secondary">end</span>
-
-  <span class="text-secondary">def</span> <span class="text-primary font-semibold">analyze</span>(topic) <span class="text-secondary">do</span>
-    <span class="text-primary font-semibold">Beamcore</span>.run(__MODULE__, <span class="text-on-primary-container">query:</span> <span class="text-on-secondary-fixed-variant">"Analyze #{topic}"</span>)
-  <span class="text-secondary">end</span>
-<span class="text-secondary">end</span></code></pre>
-</div>
+<div class="max-w-4xl mx-auto bg-surface-container-lowest border border-outline-variant rounded-xl p-8">
+<pre class="text-left font-code-md text-code-md leading-relaxed text-on-surface overflow-x-auto whitespace-pre-wrap"><code>       +-------------------------------------------------------+
+       |                  Distributed Network                  |
+       +-------------------------------------------------------+
+                                   |
+         +-------------------------+-------------------------+
+         |                                                   |
+         v                                                   v
++------------------+                               +------------------+
+|   Coding Agent   |                               |   Coding Agent   |
+|     (Node A)     |                               |     (Node B)     |
++--------+---------+                               +--------+---------+
+         |                                                   |
+         +-------------------------+-------------------------+
+                                   |
+                                   v
+             +-------------------------------------------+
+             |         Central Enterprise Ledger         |
+             |  - Cross-Organizational Tool Logging      |
+             |  - Predictive System Analytics            |
+             +-------------------------------------------+
+                                   ^
+                                   |
+             +-------------------------------------------+
+             |         Shared Memory Service             |
+             |  - Team-Wide Context Synthesis            |
+             |  - Distributed Knowledge Base             |
+             +-------------------------------------------+</code></pre>
 </div>
 </div>
 </section>
