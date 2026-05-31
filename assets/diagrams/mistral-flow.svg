@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" role="img" aria-labelledby="mistral-title mistral-desc">
+  <title id="mistral-title">Built for the Mistral Ecosystem</title>
+  <desc id="mistral-desc">Beamcore.Engine connects to Mistral.API with Streaming by Default, Stateful Sessions, and Structured Interfaces.</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4648d4"/>
+      <stop offset="1" stop-color="#ac59fb"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="1" y="1" width="958" height="518" rx="30" fill="#ffffff" stroke="#d8dde3"/>
+  <rect x="44" y="44" width="872" height="432" rx="26" fill="#f7f9fb"/>
+
+  <g filter="url(#shadow)">
+    <rect x="88" y="96" width="280" height="112" rx="22" fill="#ffffff" stroke="#c6c6cd"/>
+    <rect x="116" y="128" width="48" height="48" rx="12" fill="#000000"/>
+    <text x="180" y="158" font-family="JetBrains Mono, monospace" font-size="22" fill="#191c1e">Beamcore.Engine</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="592" y="96" width="280" height="112" rx="22" fill="#ffffff" stroke="#c6c6cd"/>
+    <rect x="620" y="128" width="48" height="48" rx="12" fill="url(#accent)"/>
+    <text x="684" y="158" font-family="JetBrains Mono, monospace" font-size="22" fill="#191c1e">Mistral.API</text>
+  </g>
+
+  <path d="M388 152H572" stroke="#4648d4" stroke-width="5" stroke-linecap="round"/>
+  <path d="M558 138l20 14-20 14" fill="none" stroke="#4648d4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="480" y="124" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="15" fill="#45464d">token stream</text>
+
+  <path d="M480 222V260" stroke="#c6c6cd" stroke-width="3" stroke-linecap="round"/>
+  <path d="M204 260H756" stroke="#c6c6cd" stroke-width="3" stroke-linecap="round"/>
+  <path d="M204 260V290" stroke="#c6c6cd" stroke-width="3" stroke-linecap="round"/>
+  <path d="M480 260V290" stroke="#c6c6cd" stroke-width="3" stroke-linecap="round"/>
+  <path d="M756 260V290" stroke="#c6c6cd" stroke-width="3" stroke-linecap="round"/>
+
+  <g filter="url(#shadow)">
+    <rect x="82" y="292" width="244" height="116" rx="22" fill="#ffffff" stroke="#c6c6cd"/>
+    <circle cx="204" cy="320" r="7" fill="#4648d4"/>
+    <text x="204" y="352" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#191c1e">Streaming by Default</text>
+    <text x="204" y="380" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="14" fill="#45464d">Real-time token streaming</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="358" y="292" width="244" height="116" rx="22" fill="#ffffff" stroke="#c6c6cd"/>
+    <circle cx="480" cy="320" r="7" fill="#4648d4"/>
+    <text x="480" y="352" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#191c1e">Stateful Sessions</text>
+    <text x="480" y="380" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="14" fill="#45464d">lightweight GenServers</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="634" y="292" width="244" height="116" rx="22" fill="#ffffff" stroke="#c6c6cd"/>
+    <circle cx="756" cy="320" r="7" fill="#4648d4"/>
+    <text x="756" y="352" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#191c1e">Structured Interfaces</text>
+    <text x="756" y="380" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="14" fill="#45464d">typed bridges</text>
+  </g>
+</svg>

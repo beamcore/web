@@ -1,0 +1,21 @@
+{
+  "name": "BeamCore",
+  "short_name": "BeamCore",
+  "description": "Elixir-native AI engineering harness.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f7f9fb",
+  "theme_color": "#f7f9fb",
+  "icons": [
+    {
+      "src": "assets/img/beamcore-mark-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/beamcore-mark-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,392 +1,228 @@
-<!DOCTYPE html>
-
-<html class="scroll-smooth" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Beamcore | The Elixir-native Agent Harness</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "surface-bright": "#f7f9fb",
-                    "surface-container": "#eceef0",
-                    "on-error-container": "#93000a",
-                    "on-secondary-fixed": "#07006c",
-                    "inverse-primary": "#bec6e0",
-                    "error-container": "#ffdad6",
-                    "on-secondary-container": "#fffbff",
-                    "on-tertiary-fixed-variant": "#6900b3",
-                    "surface-dim": "#d8dadc",
-                    "on-error": "#ffffff",
-                    "background": "#f7f9fb",
-                    "tertiary": "#000000",
-                    "primary": "#000000",
-                    "on-secondary-fixed-variant": "#2f2ebe",
-                    "on-secondary": "#ffffff",
-                    "on-tertiary-fixed": "#2c0051",
-                    "inverse-surface": "#2d3133",
-                    "on-surface-variant": "#45464d",
-                    "on-primary-fixed": "#131b2e",
-                    "outline": "#76777d",
-                    "on-surface": "#191c1e",
-                    "tertiary-container": "#2c0051",
-                    "inverse-on-surface": "#eff1f3",
-                    "surface-container-low": "#f2f4f6",
-                    "on-tertiary": "#ffffff",
-                    "on-background": "#191c1e",
-                    "surface": "#f7f9fb",
-                    "error": "#ba1a1a",
-                    "secondary-container": "#6063ee",
-                    "surface-container-lowest": "#ffffff",
-                    "surface-tint": "#565e74",
-                    "on-tertiary-container": "#ac59fb",
-                    "primary-fixed-dim": "#bec6e0",
-                    "secondary-fixed": "#e1e0ff",
-                    "on-primary": "#ffffff",
-                    "tertiary-fixed": "#f0dbff",
-                    "primary-fixed": "#dae2fd",
-                    "outline-variant": "#c6c6cd",
-                    "surface-container-highest": "#e0e3e5",
-                    "primary-container": "#131b2e",
-                    "secondary": "#4648d4",
-                    "on-primary-fixed-variant": "#3f465c",
-                    "surface-variant": "#e0e3e5",
-                    "on-primary-container": "#7c839b",
-                    "tertiary-fixed-dim": "#ddb7ff",
-                    "surface-container-high": "#e6e8ea",
-                    "secondary-fixed-dim": "#c0c1ff"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",
-                    "lg": "0.25rem",
-                    "xl": "0.5rem",
-                    "full": "0.75rem"
-            },
-            "spacing": {
-                    "max-width": "1280px",
-                    "margin-desktop": "48px",
-                    "margin-mobile": "16px",
-                    "unit": "4px",
-                    "gutter": "24px"
-            },
-            "fontFamily": {
-                    "headline-lg": ["Hanken Grotesk"],
-                    "headline-md": ["Hanken Grotesk"],
-                    "headline-sm": ["Hanken Grotesk"],
-                    "body-lg": ["Inter"],
-                    "body-md": ["Inter"],
-                    "label-caps": ["JetBrains Mono"],
-                    "code-md": ["JetBrains Mono"]
-            },
-            "fontSize": {
-                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
-                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-                    "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
-                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
-                    "label-caps": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                    "code-md": ["13px", {"lineHeight": "20px", "fontWeight": "400"}]
-            }
-          }
-        }
-      }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .code-gradient {
-            background: linear-gradient(135deg, #4648d4 0%, #ac59fb 100%);
-        }
-        .status-pulse {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: .4; }
-        }
-        .mesh-bg {
-            background-color: #ffffff;
-            background-image: radial-gradient(at 0% 0%, rgba(226, 232, 240, 0.4) 0, transparent 50%), 
-                              radial-gradient(at 100% 0%, rgba(241, 245, 249, 0.4) 0, transparent 50%);
-        }
-    </style>
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Beamcore | The Elixir-native Agent Harness</title>
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="./assets/js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <script src="./assets/js/main.js" defer></script>
 </head>
-<body class="bg-surface-container-lowest text-on-surface font-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed">
-<!-- TopNavBar -->
-<header class="fixed top-0 z-50 w-full bg-surface-container-lowest/80 backdrop-blur-md border-b border-outline-variant">
-<nav class="flex justify-between items-center w-full px-margin-desktop max-w-max-width mx-auto h-16">
-<div class="flex items-center gap-8">
-<span class="font-headline-sm text-headline-sm font-semibold text-primary">Beamcore</span>
-<div class="hidden md:flex items-center gap-6">
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Mistral Integration</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Documentation</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="https://github.com/beamcore">GitHub</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="https://discord.gg/VuyQ6hznp">Discord</a>
-</div>
-</div>
-<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-body-md hover:opacity-90 transition-all">
-                Get Started
-            </button>
-</nav>
-</header>
-<main class="pt-16 mesh-bg">
-<!-- Hero Section -->
-<section class="relative overflow-hidden py-24 md:py-32">
-<div class="max-w-max-width mx-auto px-margin-desktop text-left">
-<div class="mb-12 inline-flex items-center gap-3 px-3 py-1 rounded-full border border-outline-variant bg-surface-bright">
-<span class="w-2 h-2 rounded-full bg-secondary status-pulse"></span>
+<body class="bg-white text-[#191c1e] selection:bg-indigo-100 selection:text-indigo-950">
+  <a class="skip-link rounded-lg bg-black px-4 py-3 text-sm font-medium text-white" href="#main-content">Skip to content</a>
 
-</div>
-<div class="flex flex-col md:flex-row gap-12 items-start md:items-center mb-12">
-<div class="w-24 h-24 md:w-32 md:h-32 rounded-2xl overflow-hidden shadow-sm border border-outline-variant">
-<img alt="Beamcore Logo" class="w-full h-full object-contain p-4 bg-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbo65WhO2HUqGqMItOhTpA2LTtMfNhk2pTMucuixU-B_GLlnfdQ7Z4pEhPifYWT1uPI5P_dmYGqNQNlyQwOVMxOVCYlrqL8IVzMhjtlOPOHyPACRCBvb8woP16ViEW3GXJ7KRDFMUEv-4ESJIfXdrd0IrbN3IDvhXfXVV5YJAlNr0yqCc4vwkDo-wMIHG6E3CvKm-vjJyiaqlYc8p0AJHO8yZM9NGbEImpsol_qs9eFrmLM6PeOzWOqtVR7no95gZST2uJUTRunjk"/>
-</div>
-<div>
-<h1 class="font-headline-lg text-headline-lg md:text-[56px] md:leading-[64px] text-primary mb-6 max-w-2xl">
-                            The Elixir-native Agent Harness.
-                        </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-8 leading-relaxed">
-                            An AI research laboratory delivering sustainable, secure, and cost-effective engineering practices. Built on Erlang/OTP with Elixir, optimized for the Mistral ecosystem.
-                        </p>
-</div>
-</div>
-<div class="flex flex-wrap gap-4">
-<a href="https://github.com/beamcore" class="bg-primary text-on-primary px-8 py-3 rounded-lg font-body-md flex items-center gap-2 hover:opacity-90 transition-all inline-flex">
-<span class="material-symbols-outlined !text-[18px]">terminal</span>
-                        View on GitHub
-                    </a>
-<a href="https://discord.gg/VuyQ6hznp" class="border border-outline-variant text-primary px-8 py-3 rounded-lg font-body-md flex items-center gap-2 hover:bg-surface-container transition-all inline-flex">
-<span class="material-symbols-outlined !text-[18px]">forum</span>
-                        Join Discord
-                    </a>
-</div>
-</div>
-<!-- Technical Detail: Grid Overlay -->
-<div class="absolute top-0 right-0 -z-10 w-1/2 h-full opacity-[0.03]" style="background-image: linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px); background-size: 40px 40px;">
-</div>
-</section>
-<!-- Sustainable Development Section -->
-<section class="py-24 border-t border-outline-variant bg-white">
-<div class="max-w-max-width mx-auto px-margin-desktop">
-<div class="mb-16">
-<h2 class="font-headline-md text-headline-md text-primary mb-4">Sustainable Development</h2>
-<p class="font-body-md text-body-md text-on-surface-variant">Engineering intelligence for the long term.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<div class="p-8 border border-outline-variant rounded-xl hover:border-secondary transition-colors group">
-<div class="w-10 h-10 flex items-center justify-center bg-surface-container rounded-lg mb-6 group-hover:bg-secondary-fixed transition-colors">
-<span class="material-symbols-outlined text-primary group-hover:text-secondary">eco</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Pragmatic Cost Management</h3>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                            Strict financial transparency with deep understanding of token economics, inference cycles, and infrastructure overhead. Engineering decisions optimized to eliminate waste.
-                        </p>
-</div>
-<div class="p-8 border border-outline-variant rounded-xl hover:border-secondary transition-colors group">
-<div class="w-10 h-10 flex items-center justify-center bg-surface-container rounded-lg mb-6 group-hover:bg-secondary-fixed transition-colors">
-<span class="material-symbols-outlined text-primary group-hover:text-secondary">shield</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Security and Sustainability First</h3>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                            Security and sustainability are foundational constraints, not secondary features. No fragile, over-privileged agents in production environments.
-                        </p>
-</div>
-<div class="p-8 border border-outline-variant rounded-xl hover:border-secondary transition-colors group">
-<div class="w-10 h-10 flex items-center justify-center bg-surface-container rounded-lg mb-6 group-hover:bg-secondary-fixed transition-colors">
-<span class="material-symbols-outlined text-primary group-hover:text-secondary">bolt</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-primary mb-4">The Erlang/OTP Backbone</h3>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                            Native actor-model concurrency on the BEAM VM. Fault tolerance via supervision trees, massive concurrency with millions of simultaneous processes, and built-in distributed communication.
-                        </p>
-</div>
-</div>
-</div>
-</section>
-<!-- Integration section (Bento-like visual) -->
-<section class="py-24 bg-surface-bright relative">
-<div class="max-w-max-width mx-auto px-margin-desktop">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-<div>
-<span class="font-label-caps text-label-caps text-secondary mb-4 block">CORE ARCHITECTURE</span>
-<h2 class="font-headline-md text-headline-md text-primary mb-6">Built for the Mistral Ecosystem</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
-                            We design, optimize, and benchmark our architectures to operate natively within the Mistral AI ecosystem. State-of-the-art weights with local deployment flexibility, without compromising operational integrity or infrastructure independence.
-                        </p>
-<div class="space-y-6">
-<div class="flex items-start gap-4">
-<div class="mt-1 w-5 h-5 flex-shrink-0 bg-secondary rounded-full flex items-center justify-center">
-<span class="material-symbols-outlined text-white !text-[12px]" data-weight="fill">check</span>
-</div>
-<div>
-<p class="font-body-md font-semibold text-primary">Streaming by Default</p>
-<p class="font-body-md text-on-surface-variant">Real-time token streaming piped directly to your terminal.</p>
-</div>
-</div>
-<div class="flex items-start gap-4">
-<div class="mt-1 w-5 h-5 flex-shrink-0 bg-secondary rounded-full flex items-center justify-center">
-<span class="material-symbols-outlined text-white !text-[12px]" data-weight="fill">check</span>
-</div>
-<div>
-<p class="font-body-md font-semibold text-primary">Stateful Sessions</p>
-<p class="font-body-md text-on-surface-variant">Context management handled by lightweight GenServers.</p>
-</div>
-</div>
-<div class="flex items-start gap-4">
-<div class="mt-1 w-5 h-5 flex-shrink-0 bg-secondary rounded-full flex items-center justify-center">
-<span class="material-symbols-outlined text-white !text-[12px]" data-weight="fill">check</span>
-</div>
-<div>
-<p class="font-body-md font-semibold text-primary">Structured Interfaces</p>
-<p class="font-body-md text-on-surface-variant">Secure, typed, low-overhead bridges to filesystems and toolchains. No arbitrary bash execution or unvalidated skills.</p>
-</div>
-</div>
-</div>
-</div>
-<!-- Visual Visualization -->
-<div class="relative p-12 bg-white rounded-2xl border border-outline-variant shadow-sm overflow-hidden">
-<div class="flex justify-between items-center mb-12 relative z-10">
-<div class="bg-surface-container-lowest border border-outline-variant p-4 rounded-xl flex items-center gap-3">
-<div class="w-8 h-8 rounded bg-primary flex items-center justify-center">
-<span class="text-white font-bold text-xs">BC</span>
-</div>
-<span class="font-code-md text-code-md">Beamcore.Engine</span>
-</div>
-<div class="h-[1px] flex-grow mx-4 bg-outline-variant border-dashed border-b relative">
-<div class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-secondary"></div>
-</div>
-<div class="bg-surface-container-lowest border border-outline-variant p-4 rounded-xl flex items-center gap-3">
-<img class="w-8 h-8 rounded-full object-cover" data-alt="A clean, minimalist 3D rendering of a futuristic chip logo representing an AI provider. The icon is styled with sharp geometric lines and soft purple and blue ambient lighting on a pristine white background. High-quality digital art aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMRdQOl_1-X5o09Rh3Qm-vwhLP16Pgupalo6-pzScz-cGYXPs4-S5CZGr4hjliXKXG0Mk71lTZIo0a9_gBLgU_G44cLQWM9BbBU_ZRelsU75U97W26wFgiARFuCEzalkCu_zd-J4SegpCsX6JB6eLF9_uZhijtpSDXVQoIax-VbR46ke53FeEKJNpwTF56zHZCc2W-mOfArs1PuRaKvZs41WvuN4AiGCrYz9hzgPiTPWfDL4ucwIO_FVYUqO6cT3lktss7-hsHjlk"/>
-<span class="font-code-md text-code-md">Mistral.API</span>
-</div>
-</div>
-<div class="space-y-4 relative z-10">
-<div class="h-4 w-3/4 bg-surface-container rounded-full overflow-hidden">
-<div class="h-full bg-secondary w-2/3 transition-all duration-1000 ease-in-out"></div>
-</div>
-<div class="h-4 w-1/2 bg-surface-container rounded-full overflow-hidden">
-<div class="h-full bg-secondary w-1/3 transition-all duration-1000 ease-in-out"></div>
-</div>
-</div>
-<!-- Abstract Backdrop -->
-<div class="absolute top-0 right-0 w-64 h-64 bg-secondary-fixed/30 blur-[100px] -z-0"></div>
-</div>
-</div>
-</div>
-</section>
-<!-- Modular Architecture Section -->
-<section class="py-24 border-y border-outline-variant bg-white">
-<div class="max-w-max-width mx-auto px-margin-desktop">
-<div class="text-center mb-16">
-<h2 class="font-headline-md text-headline-md text-primary mb-4">Product Architecture: The Coding Harness</h2>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">
-                        Enterprise-grade coding harness operating as integrated single-binary or distributed microservices across enterprise teams.
-                    </p>
-</div>
-<div class="max-w-4xl mx-auto bg-surface-container-lowest border border-outline-variant rounded-xl p-8">
-<pre class="text-left font-code-md text-code-md leading-relaxed text-on-surface overflow-x-auto whitespace-pre-wrap"><code>       +-------------------------------------------------------+
-       |                  Distributed Network                  |
-       +-------------------------------------------------------+
-                                   |
-         +-------------------------+-------------------------+
-         |                                                   |
-         v                                                   v
-+------------------+                               +------------------+
-|   Coding Agent   |                               |   Coding Agent   |
-|     (Node A)     |                               |     (Node B)     |
-+--------+---------+                               +--------+---------+
-         |                                                   |
-         +-------------------------+-------------------------+
-                                   |
-                                   v
-             +-------------------------------------------+
-             |         Central Enterprise Ledger         |
-             |  - Cross-Organizational Tool Logging      |
-             |  - Predictive System Analytics            |
-             +-------------------------------------------+
-                                   ^
-                                   |
-             +-------------------------------------------+
-             |         Shared Memory Service             |
-             |  - Team-Wide Context Synthesis            |
-             |  - Distributed Knowledge Base             |
-             +-------------------------------------------+
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-xl" data-header>
+    <nav class="site-shell flex h-16 items-center justify-between gap-6" aria-label="Primary navigation">
+      <a class="flex items-center gap-3 font-semibold text-black" href="#home" aria-label="Beamcore home">
+        <span class="flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+          <img class="h-full w-full object-contain p-1" src="./assets/img/beamcore-logo.png" alt="" />
+        </span>
+        <span class="text-lg">Beamcore</span>
+      </a>
 
-  Memory Service: Isolated context retention from core reasoning
-  - Local Mode: Immediate codebase awareness
-  - Distributed Mode: Unified team-wide context repository
+      <div class="hidden items-center gap-8 md:flex">
+        <a class="nav-link" href="#mistral">Mistral Integration</a>
+        <a class="nav-link" href="#architecture">Documentation</a>
+        <a class="nav-link" href="https://github.com/beamcore" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="nav-link" href="https://discord.gg/VuyQ6hznp" target="_blank" rel="noopener noreferrer">Discord</a>
+      </div>
 
-  Multi-Agent Alignment Layer: Task decomposition, conflict
-  resolution, and synchronization between specialized agents.</code></pre>
-</div>
-</div>
-</section>
-<!-- CTA Section -->
-<section class="py-24 text-center">
-<div class="max-w-max-width mx-auto px-margin-desktop">
-<h2 class="font-headline-lg text-headline-lg text-primary mb-8">Ready to deploy?</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-lg mx-auto">
-                    Start building production-grade AI systems today. Sustainable, secure, and cost-effective engineering with Beamcore, Elixir, and Mistral.
-                </p>
-<div class="flex flex-col sm:flex-row gap-4 justify-center">
-<button class="bg-primary text-on-primary px-10 py-4 rounded-lg font-body-lg hover:shadow-lg transition-all">
-                        Get Started for Free
-                    </button>
-<button class="bg-white border border-outline-variant text-primary px-10 py-4 rounded-lg font-body-lg hover:bg-surface-container transition-all">
-                        Read Documentation
-                    </button>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="border-t border-outline-variant bg-surface-container-lowest">
-<div class="flex flex-col md:flex-row justify-between items-center w-full py-8 px-margin-desktop max-w-max-width mx-auto">
-<div class="flex flex-col items-center md:items-start mb-6 md:mb-0">
-<span class="font-headline-sm text-headline-sm font-semibold text-primary mb-2">Beamcore</span>
-<p class="font-body-md text-body-md text-on-surface-variant">© 2026 Beamcore. Built with Elixir on Erlang/OTP.</p>
-</div>
-<div class="flex flex-wrap justify-center gap-8">
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#">Privacy Policy</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#">Terms of Service</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#">Security</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#">Status</a>
-</div>
-</div>
-</footer>
-<script>
-        // Micro-interactions and scroll tracking
-        document.addEventListener('DOMContentLoaded', () => {
-            const header = document.querySelector('header');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 10) {
-                    header.classList.add('shadow-sm');
-                } else {
-                    header.classList.remove('shadow-sm');
-                }
-            });
+      <div class="flex items-center gap-3">
+        <a class="hidden rounded-lg px-5 py-2.5 text-sm font-medium text-black transition hover:bg-slate-100 sm:inline-flex" href="#get-started">Get Started</a>
+        <button class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-black md:hidden" type="button" data-menu-button aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation">
+          <span class="material-symbols-outlined !text-[22px]" aria-hidden="true">menu</span>
+        </button>
+      </div>
+    </nav>
 
-            // Smooth reveal animation for cards
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('opacity-100', 'translate-y-0');
-                        entry.target.classList.remove('opacity-0', 'translate-y-4');
-                    }
-                });
-            }, { threshold: 0.1 });
+    <div id="mobile-menu" class="mobile-menu border-t border-slate-200 bg-white/95 backdrop-blur-xl md:hidden" data-mobile-menu hidden>
+      <nav class="site-shell flex flex-col gap-2 py-4" aria-label="Mobile navigation">
+        <a class="rounded-lg px-3 py-3 text-slate-700 transition hover:bg-slate-100 hover:text-black" href="#mistral">Mistral Integration</a>
+        <a class="rounded-lg px-3 py-3 text-slate-700 transition hover:bg-slate-100 hover:text-black" href="#architecture">Documentation</a>
+        <a class="rounded-lg px-3 py-3 text-slate-700 transition hover:bg-slate-100 hover:text-black" href="https://github.com/beamcore" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="rounded-lg px-3 py-3 text-slate-700 transition hover:bg-slate-100 hover:text-black" href="https://discord.gg/VuyQ6hznp" target="_blank" rel="noopener noreferrer">Discord</a>
+        <a class="button-primary mt-2" href="#get-started">Get Started</a>
+      </nav>
+    </div>
+  </header>
 
-            document.querySelectorAll('.grid > div').forEach(el => {
-                el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
-                observer.observe(el);
-            });
-        });
-    </script>
-</body></html>
+  <main id="main-content" class="pt-16">
+    <section id="home" class="hero-space mesh-bg relative overflow-hidden" aria-labelledby="hero-title">
+      <div class="absolute right-0 top-0 -z-10 hidden h-full w-1/2 opacity-[0.035] md:block grid-overlay" aria-hidden="true"></div>
+      <div class="site-shell grid gap-8 md:grid-cols-[8rem_minmax(0,1fr)] md:items-center md:gap-12" data-reveal>
+        <figure class="h-28 w-28 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-soft md:h-32 md:w-32">
+          <img class="h-full w-full object-contain p-4" src="./assets/img/beamcore-logo.png" alt="Beamcore Logo" />
+        </figure>
+
+        <div class="max-w-3xl">
+          <h1 id="hero-title" class="max-w-3xl font-headline text-5xl font-semibold leading-tight tracking-[-0.035em] text-black sm:text-6xl lg:text-7xl">
+            The Elixir-native Agent Harness.
+          </h1>
+          <p class="mt-8 max-w-2xl text-lg leading-8 text-slate-700">
+            An AI research laboratory delivering sustainable, secure, and cost-effective engineering practices. Built on Erlang/OTP with Elixir, optimized for the Mistral ecosystem.
+          </p>
+          <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+            <a class="button-primary" href="https://github.com/beamcore" target="_blank" rel="noopener noreferrer">
+              <span class="material-symbols-outlined !text-[18px]" aria-hidden="true">terminal</span>
+              View on GitHub
+            </a>
+            <a class="button-secondary" href="https://discord.gg/VuyQ6hznp" target="_blank" rel="noopener noreferrer">
+              <span class="material-symbols-outlined !text-[18px]" aria-hidden="true">forum</span>
+              Join Discord
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sustainable" class="section-space border-t border-slate-200 bg-white" aria-labelledby="sustainable-title">
+      <div class="site-shell">
+        <div class="max-w-2xl" data-reveal>
+          <h2 id="sustainable-title" class="font-headline text-3xl font-semibold tracking-[-0.02em] text-black sm:text-4xl">Sustainable Development</h2>
+          <p class="mt-4 text-slate-700">Engineering intelligence for the long term.</p>
+        </div>
+
+        <ul class="mt-12 grid gap-6 md:grid-cols-3" role="list">
+          <li data-reveal>
+            <article class="card h-full p-7 sm:p-8">
+              <div class="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100 text-black">
+                <span class="material-symbols-outlined" aria-hidden="true">eco</span>
+              </div>
+              <h3 class="font-headline text-xl font-semibold text-black">Pragmatic Cost Management</h3>
+              <p class="mt-4 leading-7 text-slate-700">
+                Strict financial transparency with deep understanding of token economics, inference cycles, and infrastructure overhead. Engineering decisions optimized to eliminate waste.
+              </p>
+            </article>
+          </li>
+
+          <li data-reveal>
+            <article class="card h-full p-7 sm:p-8">
+              <div class="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100 text-black">
+                <span class="material-symbols-outlined" aria-hidden="true">shield</span>
+              </div>
+              <h3 class="font-headline text-xl font-semibold text-black">Security and Sustainability First</h3>
+              <p class="mt-4 leading-7 text-slate-700">
+                Security and sustainability are foundational constraints, not secondary features. No fragile, over-privileged agents in production environments.
+              </p>
+            </article>
+          </li>
+
+          <li data-reveal>
+            <article class="card h-full p-7 sm:p-8">
+              <div class="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100 text-black">
+                <span class="material-symbols-outlined" aria-hidden="true">bolt</span>
+              </div>
+              <h3 class="font-headline text-xl font-semibold text-black">The Erlang/OTP Backbone</h3>
+              <p class="mt-4 leading-7 text-slate-700">
+                Native actor-model concurrency on the BEAM VM. Fault tolerance via supervision trees, massive concurrency with millions of simultaneous processes, and built-in distributed communication.
+              </p>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="mistral" class="section-space bg-slate-50" aria-labelledby="mistral-title">
+      <div class="site-shell grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
+        <div data-reveal>
+          <p class="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-indigo-700">CORE ARCHITECTURE</p>
+          <h2 id="mistral-title" class="mt-4 font-headline text-3xl font-semibold tracking-[-0.02em] text-black sm:text-4xl">Built for the Mistral Ecosystem</h2>
+          <p class="mt-6 text-lg leading-8 text-slate-700">
+            We design, optimize, and benchmark our architectures to operate natively within the Mistral AI ecosystem. State-of-the-art weights with local deployment flexibility, without compromising operational integrity or infrastructure independence.
+          </p>
+
+          <ul class="mt-8 space-y-6" role="list">
+            <li class="flex gap-4">
+              <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-indigo-700 text-white">
+                <span class="material-symbols-outlined !text-[12px]" aria-hidden="true">check</span>
+              </span>
+              <div>
+                <h3 class="font-semibold text-black">Streaming by Default</h3>
+                <p class="mt-1 text-slate-700">Real-time token streaming piped directly to your terminal.</p>
+              </div>
+            </li>
+
+            <li class="flex gap-4">
+              <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-indigo-700 text-white">
+                <span class="material-symbols-outlined !text-[12px]" aria-hidden="true">check</span>
+              </span>
+              <div>
+                <h3 class="font-semibold text-black">Stateful Sessions</h3>
+                <p class="mt-1 text-slate-700">Context management handled by lightweight GenServers.</p>
+              </div>
+            </li>
+
+            <li class="flex gap-4">
+              <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-indigo-700 text-white">
+                <span class="material-symbols-outlined !text-[12px]" aria-hidden="true">check</span>
+              </span>
+              <div>
+                <h3 class="font-semibold text-black">Structured Interfaces</h3>
+                <p class="mt-1 text-slate-700">Secure, typed, low-overhead bridges to filesystems and toolchains. No arbitrary bash execution or unvalidated skills.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <figure class="diagram-frame p-3 sm:p-5" data-reveal>
+          <img src="./assets/diagrams/mistral-flow.png" alt="Beamcore.Engine to Mistral.API integration flow" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <section id="architecture" class="section-space border-y border-slate-200 bg-white" aria-labelledby="architecture-title">
+      <div class="site-shell">
+        <div class="mx-auto max-w-2xl text-center" data-reveal>
+          <h2 id="architecture-title" class="font-headline text-3xl font-semibold tracking-[-0.02em] text-black sm:text-4xl">Product Architecture: The Coding Harness</h2>
+          <p class="mt-4 text-slate-700">
+            Enterprise-grade coding harness operating as integrated single-binary or distributed microservices across enterprise teams.
+          </p>
+        </div>
+
+        <figure class="diagram-frame mx-auto mt-12 max-w-5xl p-3 sm:p-5" data-reveal>
+          <img src="./assets/diagrams/coding-harness.png" alt="Product Architecture: The Coding Harness" loading="lazy" />
+          <figcaption class="sr-only">
+            Memory Service: Isolated context retention from core reasoning. Local Mode: Immediate codebase awareness. Distributed Mode: Unified team-wide context repository. Multi-Agent Alignment Layer: Task decomposition, conflict resolution, and synchronization between specialized agents.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="get-started" class="section-space bg-white text-center" aria-labelledby="cta-title">
+      <div class="site-shell" data-reveal>
+        <h2 id="cta-title" class="font-headline text-4xl font-semibold tracking-[-0.03em] text-black sm:text-5xl">Ready to deploy?</h2>
+        <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-slate-700">
+          Start building production-grade AI systems today. Sustainable, secure, and cost-effective engineering with Beamcore, Elixir, and Mistral.
+        </p>
+        <div class="mx-auto mt-10 flex max-w-xl flex-col justify-center gap-4 sm:flex-row">
+          <a class="button-primary sm:min-w-48" href="#architecture">Get Started for Free</a>
+          <a class="button-secondary sm:min-w-48" href="#architecture">Read Documentation</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white" aria-labelledby="footer-title">
+    <div class="site-shell flex flex-col gap-8 py-8 md:flex-row md:items-center md:justify-between">
+      <div>
+        <h2 id="footer-title" class="font-headline text-xl font-semibold text-black">Beamcore</h2>
+        <p class="mt-2 text-sm text-slate-700">© 2026 Beamcore. Built with Elixir on Erlang/OTP.</p>
+      </div>
+
+      <nav class="flex flex-wrap gap-x-8 gap-y-3" aria-label="Footer navigation">
+        <a class="text-sm text-slate-700 transition hover:text-black hover:underline" href="#">Privacy Policy</a>
+        <a class="text-sm text-slate-700 transition hover:text-black hover:underline" href="#">Terms of Service</a>
+        <a class="text-sm text-slate-700 transition hover:text-black hover:underline" href="#">Security</a>
+        <a class="text-sm text-slate-700 transition hover:text-black hover:underline" href="#">Status</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
