@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" role="img" aria-labelledby="timeline-title timeline-desc">
+  <title id="timeline-title">Reversible Beamcore execution timeline</title>
+  <desc id="timeline-desc">A user goal advances through checkpoints. A bad step is interrupted, the session rewinds, and execution continues on a new branch without deleting the original history.</desc>
+  <defs>
+    <filter id="shadow" x="-18%" y="-18%" width="136%" height="136%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.09"/>
+    </filter>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4648d4"/>
+      <stop offset="1" stop-color="#7b61ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="1" y="1" width="998" height="698" rx="34" fill="#ffffff" stroke="#d8dde3"/>
+  <rect x="44" y="44" width="912" height="612" rx="30" fill="#f7f9fb"/>
+
+  <g filter="url(#shadow)">
+    <rect x="72" y="88" width="250" height="94" rx="22" fill="#111418"/>
+    <text x="197" y="126" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="22" fill="#ffffff">User Goal</text>
+    <text x="197" y="154" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="#d8dde3">agent acts autonomously</text>
+  </g>
+
+  <path d="M342 135H405" stroke="#4648d4" stroke-width="5" stroke-linecap="round"/>
+  <path d="M390 121l20 14-20 14" fill="none" stroke="#4648d4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g filter="url(#shadow)">
+    <rect x="424" y="88" width="210" height="94" rx="22" fill="#ffffff" stroke="#c6c6cd"/>
+    <circle cx="468" cy="135" r="13" fill="#17834c"/>
+    <text x="496" y="128" font-family="Inter, sans-serif" font-weight="700" font-size="18" fill="#191c1e">Checkpoint A</text>
+    <text x="496" y="151" font-family="JetBrains Mono, monospace" font-size="12" fill="#45464d">plan accepted</text>
+  </g>
+
+  <path d="M654 135H718" stroke="#4648d4" stroke-width="5" stroke-linecap="round"/>
+  <path d="M703 121l20 14-20 14" fill="none" stroke="#4648d4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g filter="url(#shadow)">
+    <rect x="738" y="88" width="190" height="94" rx="22" fill="#ffffff" stroke="#c6c6cd"/>
+    <circle cx="778" cy="135" r="13" fill="#17834c"/>
+    <text x="806" y="128" font-family="Inter, sans-serif" font-weight="700" font-size="18" fill="#191c1e">Checkpoint B</text>
+    <text x="806" y="151" font-family="JetBrains Mono, monospace" font-size="12" fill="#45464d">validated state</text>
+  </g>
+
+  <path d="M833 204V254" stroke="#4648d4" stroke-width="5" stroke-linecap="round"/>
+  <path d="M819 239l14 20 14-20" fill="none" stroke="#4648d4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g filter="url(#shadow)">
+    <rect x="690" y="278" width="238" height="100" rx="22" fill="#fff7ed" stroke="#f59e0b"/>
+    <circle cx="734" cy="328" r="14" fill="#f59e0b"/>
+    <text x="763" y="319" font-family="Inter, sans-serif" font-weight="700" font-size="18" fill="#191c1e">Bad Step</text>
+    <text x="763" y="346" font-family="JetBrains Mono, monospace" font-size="12" fill="#7c2d12">interrupt branch</text>
+  </g>
+
+  <path d="M690 328H562" stroke="#f59e0b" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 10"/>
+  <path d="M580 314l-20 14 20 14" fill="none" stroke="#f59e0b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g filter="url(#shadow)">
+    <rect x="322" y="278" width="220" height="100" rx="22" fill="#ffffff" stroke="#4648d4"/>
+    <rect x="352" y="307" width="44" height="44" rx="12" fill="url(#accent)"/>
+    <text x="418" y="320" font-family="Inter, sans-serif" font-weight="700" font-size="18" fill="#191c1e">Rewind</text>
+    <text x="418" y="346" font-family="JetBrains Mono, monospace" font-size="12" fill="#45464d">restore checkpoint B</text>
+  </g>
+
+  <path d="M432 398V454" stroke="#4648d4" stroke-width="5" stroke-linecap="round"/>
+  <path d="M418 439l14 20 14-20" fill="none" stroke="#4648d4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g filter="url(#shadow)">
+    <rect x="254" y="480" width="356" height="112" rx="24" fill="#111418"/>
+    <text x="432" y="521" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="22" fill="#ffffff">Fork a New Branch</text>
+    <text x="432" y="550" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="#d8dde3">old history remains append-only</text>
+    <text x="432" y="574" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="#a8b0bc">continue with corrected context</text>
+  </g>
+
+  <path d="M630 536H708" stroke="#4648d4" stroke-width="5" stroke-linecap="round"/>
+  <path d="M693 522l20 14-20 14" fill="none" stroke="#4648d4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g filter="url(#shadow)">
+    <rect x="730" y="480" width="198" height="112" rx="24" fill="#ffffff" stroke="#c6c6cd"/>
+    <circle cx="774" cy="536" r="14" fill="#17834c"/>
+    <text x="802" y="527" font-family="Inter, sans-serif" font-weight="700" font-size="18" fill="#191c1e">Resume</text>
+    <text x="802" y="554" font-family="JetBrains Mono, monospace" font-size="12" fill="#45464d">new active path</text>
+  </g>
+
+  <path d="M162 214V558" stroke="#c6c6cd" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 10"/>
+  <circle cx="162" cy="248" r="8" fill="#4648d4"/>
+  <circle cx="162" cy="338" r="8" fill="#4648d4"/>
+  <circle cx="162" cy="428" r="8" fill="#4648d4"/>
+  <circle cx="162" cy="518" r="8" fill="#4648d4"/>
+  <text x="118" y="252" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="12" fill="#45464d">event</text>
+  <text x="118" y="342" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="12" fill="#45464d">checkpoint</text>
+  <text x="118" y="432" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="12" fill="#45464d">rewind</text>
+  <text x="118" y="522" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="12" fill="#45464d">fork</text>
+</svg>

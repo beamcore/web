@@ -1,20 +1,20 @@
 {
-  "name": "BeamCore",
-  "short_name": "BeamCore",
-  "description": "Elixir-native AI engineering harness.",
-  "start_url": ".",
+  "name": "Beamcore",
+  "short_name": "Beamcore",
+  "description": "Autonomous Elixir-native terminal agent with a reversible execution timeline.",
+  "start_url": "./",
   "display": "standalone",
-  "background_color": "#f7f9fb",
-  "theme_color": "#f7f9fb",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "icons": [
     {
-      "src": "assets/img/beamcore-mark-192.png",
-      "sizes": "192x192",
+      "src": "assets/img/favicon.png",
+      "sizes": "256x256",
       "type": "image/png"
     },
     {
-      "src": "assets/img/beamcore-mark-512.png",
-      "sizes": "512x512",
+      "src": "assets/img/beamcore-logo.png",
+      "sizes": "720x720",
       "type": "image/png"
     }
   ]
