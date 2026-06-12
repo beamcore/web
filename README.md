@@ -17,6 +17,6 @@ web/
 │   ├── img/
 │   └── diagrams/
 │       ├── provider-runtime.svg / .png
-│       └── reversible-timeline.svg / .png
+│       └── session-timeline.svg / .png
 └── .github/workflows/pages.yml
 ```

@@ -35,8 +35,7 @@ const updateActiveNavigation = () => {
   navLinks.forEach((link) => link.classList.toggle('is-active', link.getAttribute('href') === `#${current}`));
 };
 
-const copyInstallCommand = async () => {
-  const button = document.querySelector('[data-copy-button]');
+const copyInstallCommand = async (button) => {
   const targetId = button?.getAttribute('data-copy-target');
   const target = targetId ? document.getElementById(targetId) : null;
   const label = button?.querySelector('[data-copy-label]');
@@ -62,7 +61,7 @@ mobileMenu?.querySelectorAll('a').forEach((link) => link.addEventListener('click
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') closeMobileMenu();
 });
-document.querySelector('[data-copy-button]')?.addEventListener('click', copyInstallCommand);
+document.querySelectorAll('[data-copy-button]').forEach((btn) => btn.addEventListener('click', () => copyInstallCommand(btn)));
 
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver((entries) => {

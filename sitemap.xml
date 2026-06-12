@@ -13,8 +13,8 @@
       <image:title>Beamcore logo</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://beamcore.dev/assets/diagrams/reversible-timeline.png</image:loc>
-      <image:title>Beamcore reversible execution timeline</image:title>
+      <image:loc>https://beamcore.dev/assets/diagrams/session-timeline.png</image:loc>
+      <image:title>Beamcore execution timeline</image:title>
     </image:image>
     <image:image>
       <image:loc>https://beamcore.dev/assets/diagrams/coding-harness.png</image:loc>

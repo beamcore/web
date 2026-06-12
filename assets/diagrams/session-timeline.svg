@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" role="img" aria-labelledby="timeline-title timeline-desc">
-  <title id="timeline-title">Reversible Beamcore execution timeline</title>
+  <title id="timeline-title">Beamcore execution timeline</title>
   <desc id="timeline-desc">A user goal advances through checkpoints. A bad step is interrupted, the session rewinds, and execution continues on a new branch without deleting the original history.</desc>
   <defs>
     <filter id="shadow" x="-18%" y="-18%" width="136%" height="136%">

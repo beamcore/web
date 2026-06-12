@@ -1,7 +1,7 @@
 {
   "name": "Beamcore",
   "short_name": "Beamcore",
-  "description": "Autonomous Elixir-native terminal agent with a reversible execution timeline.",
+  "description": "Autonomous Elixir-native terminal agent with a persistent execution timeline.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
