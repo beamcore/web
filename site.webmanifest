@@ -1,19 +1,19 @@
 {
   "name": "Beamcore",
   "short_name": "Beamcore",
-  "description": "Autonomous Elixir-native terminal agent with a persistent execution timeline.",
-  "start_url": "./",
+  "description": "Local-first Elixir terminal agent with a real TUI and generated function execution.",
+  "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff",
+  "background_color": "#f7f8fb",
+  "theme_color": "#4d3df5",
   "icons": [
     {
-      "src": "assets/img/favicon.png",
-      "sizes": "256x256",
+      "src": "/assets/img/favicon.png",
+      "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "assets/img/beamcore-logo.png",
+      "src": "/assets/img/beamcore-logo.png",
       "sizes": "720x720",
       "type": "image/png"
     }

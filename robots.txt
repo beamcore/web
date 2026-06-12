@@ -1,7 +1,3 @@
 User-agent: *
 Allow: /
-
-# Keep all public landing-page assets crawlable for search previews.
-Allow: /assets/
-
 Sitemap: https://beamcore.dev/sitemap.xml

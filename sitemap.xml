@@ -5,7 +5,7 @@
 >
   <url>
     <loc>https://beamcore.dev/</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -13,16 +13,8 @@
       <image:title>Beamcore logo</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://beamcore.dev/assets/diagrams/session-timeline.png</image:loc>
-      <image:title>Beamcore execution timeline</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://beamcore.dev/assets/diagrams/coding-harness.png</image:loc>
-      <image:title>Beamcore parallel agent topology</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://beamcore.dev/assets/diagrams/provider-runtime.png</image:loc>
-      <image:title>Beamcore provider-neutral runtime routing</image:title>
+      <image:loc>https://beamcore.dev/assets/diagrams/session-execution-contour.svg</image:loc>
+      <image:title>Beamcore execution path</image:title>
     </image:image>
   </url>
 </urlset>

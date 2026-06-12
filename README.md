@@ -1,22 +1,19 @@
-# Beamcore Web
+# Beamcore web
 
-Static GitHub Pages landing page for the Beamcore.
+Static landing page for `beamcore.dev`.
 
-## Structure
+## Local preview
 
-```text
-web/
-├── index.html
-├── 404.html
-├── site.webmanifest
-├── assets/
-│   ├── css/styles.css
-│   ├── js/
-│   │   ├── main.js
-│   │   └── tailwind.config.js
-│   ├── img/
-│   └── diagrams/
-│       ├── provider-runtime.svg / .png
-│       └── session-timeline.svg / .png
-└── .github/workflows/pages.yml
+```bash
+python3 -m http.server 8080
 ```
+
+Open `http://localhost:8080`.
+
+## Notes
+
+- No build step is required.
+- Tailwind is compiled into `assets/css/styles.css`, so the GitHub Pages workflow does not need `node_modules`.
+- The hero terminal is HTML/CSS, not a screenshot.
+- The runtime diagram is intentionally compact: user input, two context nodes, generated function, local execution, result.
+- The install section mirrors the source-first command block style from the live site.

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="520" viewBox="0 0 1280 520" role="img" aria-labelledby="title desc">
+  <title id="title">Beamcore execution path</title>
+  <desc id="desc">User input flows into node A and node B, then into a generated function, local execution, and a result.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="11" markerHeight="11" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#4d3df5"/>
+    </marker>
+    <filter id="softShadow" x="-20%" y="-35%" width="140%" height="170%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#111827" flood-opacity="0.10"/>
+    </filter>
+    <style>
+      .label{font-family:Inter,Arial,sans-serif;font-size:24px;font-weight:850;fill:#0b0d12}
+      .small{font-family:Inter,Arial,sans-serif;font-size:16px;fill:#657083}
+      .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:16px;fill:#4d3df5;font-weight:700}
+      .num{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:13px;font-weight:900;fill:#4d3df5}
+      .arrow{fill:none;stroke:#4d3df5;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+    </style>
+  </defs>
+
+  <rect width="1280" height="520" rx="28" fill="#fff"/>
+  <rect x="24" y="24" width="1232" height="472" rx="24" fill="#fbfcff" stroke="#dbe3f0"/>
+
+  <text x="58" y="76" font-family="Inter,Arial,sans-serif" font-size="29" font-weight="850" fill="#080b11">Execution path</text>
+  <text x="58" y="108" font-family="Inter,Arial,sans-serif" font-size="17" fill="#657083">Simple enough to remember. Detailed enough to explain the runtime.</text>
+
+  <g filter="url(#softShadow)">
+    <rect x="56" y="212" width="170" height="96" rx="18" fill="#0f1117"/>
+    <text x="82" y="250" class="num" fill="#9fb0ca">01</text>
+    <text x="82" y="278" font-family="Inter,Arial,sans-serif" font-size="21" font-weight="850" fill="#fff">User input</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="315" y="145" width="178" height="92" rx="18" fill="#fff" stroke="#cfd8e8"/>
+    <text x="340" y="181" class="num">02A</text>
+    <text x="340" y="209" class="label">Node A</text>
+    <text x="340" y="229" class="small">files · output</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="315" y="285" width="178" height="92" rx="18" fill="#fff" stroke="#cfd8e8"/>
+    <text x="340" y="321" class="num">02B</text>
+    <text x="340" y="349" class="label">Node B</text>
+    <text x="340" y="369" class="small">structure · state</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="596" y="191" width="260" height="138" rx="22" fill="#fff" stroke="#4d3df5" stroke-width="2"/>
+    <rect x="624" y="220" width="54" height="54" rx="15" fill="#4d3df5"/>
+    <text x="641" y="256" font-family="Inter,Arial,sans-serif" font-size="25" font-weight="900" fill="#fff">fn</text>
+    <text x="696" y="237" class="label">Generated</text>
+    <text x="696" y="266" class="label">function</text>
+    <text x="696" y="297" class="mono">work(repo)</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="940" y="146" width="210" height="92" rx="18" fill="#fff" stroke="#cfd8e8"/>
+    <text x="968" y="182" class="num">04</text>
+    <text x="968" y="208" class="label">Execute</text>
+    <text x="968" y="231" class="small">locally</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="940" y="286" width="210" height="92" rx="18" fill="#0f1117"/>
+    <text x="968" y="322" class="num" fill="#9fb0ca">05</text>
+    <text x="968" y="350" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="850" fill="#fff">Result</text>
+    <text x="968" y="370" font-family="Inter,Arial,sans-serif" font-size="16" fill="#9fb0ca">patch · report · answer</text>
+  </g>
+
+  <path class="arrow" d="M226 260 H270 V191 H315"/>
+  <path class="arrow" d="M226 260 H270 V331 H315"/>
+  <path class="arrow" d="M493 191 H540 V260 H596"/>
+  <path class="arrow" d="M493 331 H540 V260 H596"/>
+  <path class="arrow" d="M856 260 H900 V192 H940"/>
+  <path class="arrow" d="M1045 238 V286"/>
+
+  <rect x="56" y="418" width="1098" height="48" rx="16" fill="#f2f4ff" stroke="#d9ddff"/>
+  <text x="82" y="449" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="760" fill="#1c2240">User input → Node A / Node B → generated function → local execution → visible result.</text>
+</svg>
