@@ -4,6 +4,9 @@ const mobileMenu = document.querySelector('[data-mobile-menu]');
 const revealItems = document.querySelectorAll('[data-reveal]');
 const anchorLinks = document.querySelectorAll('a[href^="#"]');
 const sections = [...document.querySelectorAll('main section[id]')];
+const diagramDialog = document.querySelector('[data-diagram-dialog]');
+const diagramOpenButton = document.querySelector('[data-diagram-open]');
+const diagramCloseButton = document.querySelector('[data-diagram-close]');
 
 const setHeaderState = () => {
   header?.classList.toggle('shadow-[0_8px_30px_rgba(18,24,38,.08)]', window.scrollY > 8);
@@ -65,6 +68,23 @@ document.addEventListener('keydown', (event) => {
 });
 document.querySelectorAll('[data-copy-button]').forEach((button) => {
   button.addEventListener('click', () => copyCommand(button));
+});
+
+diagramOpenButton?.addEventListener('click', () => {
+  if (!diagramDialog) return;
+  if (typeof diagramDialog.showModal === 'function') {
+    diagramDialog.showModal();
+  } else {
+    diagramDialog.setAttribute('open', '');
+  }
+});
+
+diagramCloseButton?.addEventListener('click', () => {
+  diagramDialog?.close();
+});
+
+diagramDialog?.addEventListener('click', (event) => {
+  if (event.target === diagramDialog) diagramDialog.close();
 });
 
 if ('IntersectionObserver' in window) {

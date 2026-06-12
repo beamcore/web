@@ -212,9 +212,14 @@
         </div>
 
         <article class="overflow-hidden rounded-2xl border border-beam-line bg-white shadow-[0_18px_56px_rgba(15,23,42,.07)]" data-reveal>
-          <div class="border-b border-beam-line p-5">
+          <div class="flex items-start justify-between gap-4 border-b border-beam-line p-5">
+            <div>
             <h3 class="text-xl font-bold">Execution path</h3>
             <p class="mt-2 text-sm leading-6 text-beam-muted">User input flows through context nodes into a generated function, local execution, and result.</p>
+            </div>
+            <button class="inline-flex shrink-0 items-center justify-center rounded-full border border-beam-line bg-beam-paper px-3 py-2 font-mono text-xs font-black uppercase tracking-[0.12em] text-beam-violet shadow-sm transition hover:-translate-y-0.5 md:hidden" type="button" data-diagram-open aria-controls="diagram-dialog">
+              Expand
+            </button>
           </div>
           <img class="w-full" src="./assets/diagrams/session-execution-contour.svg" alt="User input flows to node A and node B, then into a generated function, local execution, and result" loading="lazy" />
         </article>
@@ -299,5 +304,14 @@ $ beamcore</code></pre>
       </nav>
     </div>
   </footer>
+  <dialog id="diagram-dialog" class="m-auto w-[calc(100%-24px)] max-w-5xl rounded-2xl border border-white/10 bg-[#111318] p-0 text-white shadow-[0_24px_72px_rgba(15,23,42,.32)] backdrop:bg-black/70" data-diagram-dialog aria-label="Expanded execution path diagram">
+    <div class="flex items-center justify-between gap-4 border-b border-white/10 px-4 py-3">
+      <span class="font-mono text-xs font-black uppercase tracking-[0.15em] text-beam-cyan">Execution path</span>
+      <button class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/10 text-lg leading-none text-white transition hover:bg-white/20" type="button" data-diagram-close aria-label="Close expanded diagram">×</button>
+    </div>
+    <div class="max-h-[82vh] overflow-auto bg-white p-2">
+      <img class="min-w-[720px] rounded-xl" src="./assets/diagrams/session-execution-contour.svg" alt="User input flows to node A and node B, then into a generated function, local execution, and result" />
+    </div>
+  </dialog>
 </body>
 </html>
