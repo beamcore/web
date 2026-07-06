@@ -1,315 +1,54 @@
-<!doctype html>
-<html lang="en" class="scroll-smooth no-js">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#f7f8fb" />
-  <meta name="description" content="Beamcore is a local-first Elixir terminal agent with a real TUI, a durable session, and generated function execution for coding work." />
-  <meta name="keywords" content="Beamcore, Elixir terminal agent, local coding agent, terminal AI agent, generated functions, code execution runtime, TUI agent, OTP agent" />
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <link rel="canonical" href="https://beamcore.dev/" />
-  <link rel="sitemap" type="application/xml" href="https://beamcore.dev/sitemap.xml" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Beamcore. Frontier applications for frontier AI.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://beamcore.dev/">
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Beamcore</title>
 
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://beamcore.dev/" />
-  <meta property="og:site_name" content="Beamcore" />
-  <meta property="og:title" content="Beamcore - local coding agent" />
-  <meta property="og:description" content="A local-first Elixir terminal agent with a real TUI, durable session, and generated function execution." />
-  <meta property="og:image" content="https://beamcore.dev/assets/img/beamcore-logo.png" />
-  <meta property="og:image:alt" content="Beamcore logo" />
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:url" content="https://beamcore.dev/" />
-  <meta name="twitter:title" content="Beamcore - local coding agent" />
-  <meta name="twitter:description" content="Elixir terminal agent. Real TUI. Generated functions. Local-first execution." />
-  <meta name="twitter:image" content="https://beamcore.dev/assets/img/beamcore-logo.png" />
-
-  <title>Beamcore | Local coding agent</title>
-  <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
-  <link rel="manifest" href="./site.webmanifest" />
-  <link rel="stylesheet" href="./assets/css/styles.css" />
-  <script>document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js');</script>
-  <script src="./assets/js/main.js" defer></script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Beamcore",
-    "url": "https://beamcore.dev/",
-    "applicationCategory": "DeveloperApplication",
-    "operatingSystem": "macOS, Linux",
-    "programmingLanguage": "Elixir",
-    "description": "Local-first Elixir terminal agent with a real TUI, durable session, and generated function execution.",
-    "codeRepository": "https://github.com/beamcore/agent",
-    "license": "https://opensource.org/licenses/MIT",
-    "image": "https://beamcore.dev/assets/img/beamcore-logo.png"
-  }
-  </script>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://beamcore.dev/">
+  <meta property="og:title" content="Beamcore">
+  <meta property="og:description" content="Frontier applications for frontier AI.">
+  <meta property="og:image" content="https://beamcore.dev/assets/img/beamcore-logo.png">
 </head>
+<body>
+  <nav>
+    <a href="./">Beamcore</a>
+    <a href="./agent.html">Agent</a>
+  </nav>
 
-<body class="min-w-[320px] bg-[radial-gradient(circle_at_12%_-4%,rgba(77,61,245,0.11),transparent_31rem),radial-gradient(circle_at_92%_5%,rgba(87,216,255,0.10),transparent_28rem),linear-gradient(180deg,#fbfcff_0%,#f7f8fb_46%,#fff_100%)] font-sans text-beam-ink antialiased selection:bg-violet-100 selection:text-violet-950">
-  <a class="fixed left-4 top-4 z-[100] -translate-y-[150%] rounded-full bg-[#111318] px-4 py-3 text-sm font-semibold text-white transition focus:translate-y-0" href="#main-content">Skip to content</a>
+  <div class="container">
+    <h1>Frontier applications for frontier AI.</h1>
 
-  <header class="sticky top-0 z-50 border-b border-beam-line/85 bg-beam-paper/85 backdrop-blur-xl transition-shadow" data-header>
-    <nav class="mx-auto flex min-h-[66px] w-[min(1140px,calc(100%-40px))] items-center gap-6" aria-label="Primary navigation">
-      <a class="inline-flex items-center gap-3 text-lg font-extrabold tracking-normal text-beam-ink" href="#home" aria-label="Beamcore home">
-        <img class="h-[34px] w-[34px] object-contain" src="./assets/img/beamcore-logo.png" alt="" width="34" height="34" />
-        <span>Beamcore</span>
-      </a>
+    <p>AI is moving fast. The tools around it are not. We build applications that match the pace.</p>
 
-      <button class="ml-auto inline-flex h-11 w-11 items-center justify-center rounded-xl border border-beam-line bg-white text-beam-ink lg:hidden" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu" data-menu-button>
-        <span class="flex flex-col gap-1.5" aria-hidden="true"><span class="block h-0.5 w-5 rounded bg-current"></span><span class="block h-0.5 w-5 rounded bg-current"></span><span class="block h-0.5 w-5 rounded bg-current"></span></span>
-      </button>
+    <hr>
 
-      <div class="ml-auto hidden items-center gap-7 text-sm font-semibold text-[#343946] lg:flex" data-nav-links>
-        <a class="transition hover:text-beam-violet" href="#product">Product</a>
-        <a class="transition hover:text-beam-violet" href="#runtime">Runtime</a>
-        <a class="transition hover:text-beam-violet" href="#edge">Edge</a>
-        <a class="transition hover:text-beam-violet" href="#install">Install</a>
-        <a class="transition hover:text-beam-violet" href="https://github.com/beamcore/agent" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </div>
+    <h2>Applications</h2>
+    <ul class="list">
+      <li><a href="./agent.html">Agent</a> — a terminal coding agent. Elixir Native.</li>
+    </ul>
 
-      <a class="hidden min-h-10 items-center justify-center rounded-xl bg-beam-violet px-4 text-sm font-bold text-white shadow-[0_10px_24px_rgba(77,61,245,.24)] transition hover:-translate-y-0.5 lg:inline-flex" href="#install">Try locally</a>
-    </nav>
+    <hr>
 
-    <nav id="mobile-menu" class="mx-auto hidden w-[min(1140px,calc(100%-40px))] flex-col gap-2 pb-4 text-sm font-semibold text-[#343946] lg:hidden" aria-label="Mobile navigation" data-mobile-menu>
-      <a class="rounded-xl px-3 py-3 hover:bg-white" href="#product">Product</a>
-      <a class="rounded-xl px-3 py-3 hover:bg-white" href="#runtime">Runtime</a>
-      <a class="rounded-xl px-3 py-3 hover:bg-white" href="#edge">Edge</a>
-      <a class="rounded-xl px-3 py-3 hover:bg-white" href="#install">Install</a>
-      <a class="rounded-xl px-3 py-3 hover:bg-white" href="https://github.com/beamcore/agent" target="_blank" rel="noopener noreferrer">GitHub</a>
-    </nav>
-  </header>
+    <h2>Install Agent</h2>
+    <div class="code">git clone https://github.com/beamcore/agent.git
+cd agent
+make install
+beamcore</div>
 
-  <main id="main-content">
-    <section id="home" class="py-16 md:py-20 lg:py-24" aria-labelledby="hero-title">
-      <div class="mx-auto grid w-[min(1140px,calc(100%-40px))] items-center gap-10 lg:grid-cols-[minmax(0,.7fr)_minmax(0,1.3fr)]">
-        <div data-reveal>
-          <p class="m-0 mb-3 font-mono text-[0.7rem] font-black uppercase tracking-[0.15em] text-beam-violet">Elixir / OTP / terminal / local-first</p>
-          <h1 id="hero-title" class="m-0 max-w-3xl text-4xl font-black leading-[1.02] tracking-normal text-[#07080b] sm:text-5xl lg:text-6xl">
-            Local agent.<br />Writes code.
-          </h1>
-          <p class="mt-6 max-w-lg text-base leading-7 text-[#40495a] sm:text-lg">
-            Beamcore is a real terminal TUI for coding sessions. It keeps context, renders EEVA execution, writes focused functions, runs them locally, and returns changes through one timeline.
-          </p>
+    <p>Requires Elixir 1.18+, Erlang/OTP 27+, Git.</p>
 
-          <div class="mt-7 flex flex-wrap gap-3">
-            <a class="inline-flex min-h-11 items-center justify-center rounded-xl bg-beam-violet px-5 text-sm font-bold text-white shadow-[0_10px_24px_rgba(77,61,245,.24)] transition hover:-translate-y-0.5" href="#install">Install Beamcore</a>
-            <a class="inline-flex min-h-11 items-center justify-center rounded-xl border border-beam-line bg-white px-5 text-sm font-bold text-[#161a22] transition hover:-translate-y-0.5" href="#runtime">See runtime</a>
-          </div>
 
-          <aside class="mt-5 flex max-w-xl flex-wrap gap-x-3 gap-y-1 rounded-2xl border border-beam-violet/20 bg-white/75 p-4 text-sm text-[#424a59]" role="note">
-            <strong class="text-[#111318]">Ships as-is.</strong>
-            <span>No warranty. Run locally. Decide your own limits.</span>
-          </aside>
-        </div>
+  </div>
 
-        <figure class="terminal-card" aria-label="Beamcore TUI recreated in HTML" data-reveal>
-          <div class="terminal-window">
-            <div class="terminal-titlebar">
-              <div class="traffic" aria-hidden="true"><span></span><span></span><span></span></div>
-              <figcaption class="terminal-title"><span class="folder-dot"></span>test - beam.smp -- -root ~/.beamcore/app -bindir ~/.beamcore/app/erts-16.4/bin -prog...</figcaption>
-            </div>
-
-            <div class="terminal-screen">
-              <pre class="code-panel ghost"><code><span class="dim">        }</span>
-<span class="tag">      &lt;/style&gt;</span>
-<span class="tag">    &lt;/head&gt;</span>
-<span class="tag">    &lt;body&gt;</span>
-<span class="tag">      &lt;div</span> <span class="attr">class</span>=<span class="str">&quot;container&quot;</span><span class="tag">&gt;</span>
-<span class="tag">        &lt;h1&gt;</span><span class="warn">404</span><span class="tag">&lt;/h1&gt;</span>
-<span class="tag">        &lt;p&gt;</span><span class="accent">Oops!</span> The page you're looking for doesn't exist.<span class="tag">&lt;/p&gt;</span>
-<span class="tag">        &lt;p&gt;&lt;a</span> <span class="attr">href</span>=<span class="str">&quot;/&quot;</span><span class="tag">&gt;</span><span class="accent">Return to Home</span><span class="tag">&lt;/a&gt;&lt;/p&gt;</span>
-<span class="tag">      &lt;/div&gt;</span>
-<span class="tag">    &lt;/body&gt;</span>
-<span class="tag">  &lt;/html&gt;</span>
-<span class="str">&quot;&quot;&quot;</span>)</code></pre>
-
-              <div class="eeva-block">
-                <div class="eeva-label"><span aria-hidden="true">&#9889;</span><strong>EEVA</strong></div>
-                <pre class="code-panel"><code><span class="fence">```elixir</span>
-<span class="fn">File</span>.write!(<span class="str">&quot;gallery.html&quot;</span>, <span class="str">&quot;&quot;&quot;</span>
-<span class="tag">&lt;!DOCTYPE html&gt;</span>
-<span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="str">&quot;en&quot;</span><span class="tag">&gt;</span>
-<span class="tag">&lt;head&gt;</span>
-  <span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="str">&quot;UTF-8&quot;</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="str">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="str">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;title&gt;</span><span class="accent">Gallery</span><span class="tag">&lt;/title&gt;</span>
-  <span class="tag">&lt;style&gt;</span>
-    body {
-      font-family: <span class="str">'Arial'</span>, sans-serif;
-      background-color: <span class="comment">#f4f4f9</span>;
-<span class="cursor-row">      <span class="cursor-strip" aria-hidden="true"></span></span></code></pre>
-              </div>
-            </div>
-
-            <div class="terminal-input">
-              <div class="input-box"><span class="input-caret"></span><span>Ask BeamCore, describe a change</span></div>
-            </div>
-
-            <div class="terminal-statusbar">
-              <span class="mascot">◢▣◣</span>
-              <span class="status-active">F1 Agent</span>
-              <span>F2 Chat</span>
-              <span class="status-spacer"></span>
-              <span>mistral/mistral-medium-3-5</span>
-              <span>tok 3.3k/5.2k</span>
-            </div>
-          </div>
-        </figure>
-      </div>
-    </section>
-
-    <section id="product" class="border-y border-beam-line bg-white py-16 md:py-24" aria-labelledby="product-title">
-      <div class="mx-auto w-[min(1140px,calc(100%-40px))]">
-        <div class="max-w-2xl" data-reveal>
-          <p class="mb-3 font-mono text-[0.7rem] font-black uppercase tracking-[0.15em] text-beam-violet">Product</p>
-          <h2 id="product-title" class="text-3xl font-black leading-tight tracking-normal text-[#07080b] sm:text-5xl">The terminal is the product.</h2>
-          <p class="mt-5 text-lg leading-8 text-beam-muted">No fake dashboard. Beamcore shows code, EEVA execution, file context, status, and results in the same screen.</p>
-        </div>
-
-        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <article class="rounded-2xl border border-beam-line bg-white p-6 shadow-sm" data-reveal>
-            <span class="font-mono text-xs font-bold text-beam-violet">01</span>
-            <h3 class="mt-5 text-xl font-bold">Strong session</h3>
-            <p class="mt-3 leading-7 text-beam-muted">One durable loop carries task intent, files, output, and decisions across the run.</p>
-          </article>
-          <article class="rounded-2xl border border-beam-line bg-white p-6 shadow-sm" data-reveal>
-            <span class="font-mono text-xs font-bold text-beam-violet">02</span>
-            <h3 class="mt-5 text-xl font-bold">Generated functions</h3>
-            <p class="mt-3 leading-7 text-beam-muted">The agent can write small code paths to inspect, transform, validate, and report.</p>
-          </article>
-          <article class="rounded-2xl border border-beam-line bg-white p-6 shadow-sm" data-reveal>
-            <span class="font-mono text-xs font-bold text-beam-violet">03</span>
-            <h3 class="mt-5 text-xl font-bold">EEVA rendered</h3>
-            <p class="mt-3 leading-7 text-beam-muted">Execution steps appear as readable code blocks, not hidden background magic.</p>
-          </article>
-          <article class="rounded-2xl border border-beam-line bg-white p-6 shadow-sm" data-reveal>
-            <span class="font-mono text-xs font-bold text-beam-violet">04</span>
-            <h3 class="mt-5 text-xl font-bold">Local-first</h3>
-            <p class="mt-3 leading-7 text-beam-muted">It runs where the repo lives. Your machine, your data, your responsibility.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="runtime" class="py-16 md:py-24" aria-labelledby="runtime-title">
-      <div class="mx-auto grid w-[min(1140px,calc(100%-40px))] items-center gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-        <div data-reveal>
-          <p class="mb-3 font-mono text-[0.7rem] font-black uppercase tracking-[0.15em] text-beam-violet">Runtime</p>
-          <h2 id="runtime-title" class="text-3xl font-black leading-tight tracking-normal text-[#07080b] sm:text-5xl">User input. Nodes. Function. Result.</h2>
-          <p class="mt-5 text-lg leading-8 text-beam-muted">The session receives the task, prepares context nodes, generates a small focused function, runs it locally, and shows the outcome.</p>
-          <div class="mt-6 flex flex-wrap gap-2 text-xs font-bold text-[#343946]" aria-label="Runtime legend">
-            <span class="rounded-full border border-beam-line bg-white px-3 py-2">User input</span>
-            <span class="rounded-full border border-beam-line bg-white px-3 py-2">Node A</span>
-            <span class="rounded-full border border-beam-line bg-white px-3 py-2">Node B</span>
-            <span class="rounded-full border border-beam-line bg-white px-3 py-2">Generated function</span>
-            <span class="rounded-full border border-beam-line bg-white px-3 py-2">Result</span>
-          </div>
-        </div>
-
-        <article class="overflow-hidden rounded-2xl border border-beam-line bg-white shadow-[0_18px_56px_rgba(15,23,42,.07)]" data-reveal>
-          <div class="border-b border-beam-line p-5">
-            <h3 class="text-xl font-bold">Execution path</h3>
-            <p class="mt-2 text-sm leading-6 text-beam-muted">User input flows through context nodes into a generated function, local execution, and result.</p>
-          </div>
-          <img class="w-full" src="./assets/diagrams/session-execution-contour.svg" alt="User input flows to node A and node B, then into a generated function, local execution, and result" loading="lazy" />
-          <button class="flex min-h-12 w-full items-center justify-center border-t border-beam-line bg-white px-4 py-3 text-center font-mono text-xs font-black uppercase tracking-[0.14em] text-black transition hover:bg-beam-paper md:hidden" type="button" data-diagram-open aria-controls="diagram-dialog">
-            Expand diagram
-          </button>
-        </article>
-      </div>
-    </section>
-
-    <section id="edge" class="border-y border-beam-line bg-[#111318] py-16 text-white md:py-24" aria-labelledby="edge-title">
-      <div class="mx-auto w-[min(1140px,calc(100%-40px))]">
-        <div class="max-w-2xl" data-reveal>
-          <p class="mb-3 font-mono text-[0.7rem] font-black uppercase tracking-[0.15em] text-beam-cyan">Why people will point at it</p>
-          <h2 id="edge-title" class="text-3xl font-black leading-tight tracking-normal sm:text-5xl">You decide the limits.</h2>
-          <p class="mt-5 text-lg leading-8 text-white/70">Use it, inspect it, constrain it, fork it, or refuse it. Just do not pretend it is a toy.</p>
-        </div>
-
-        <div class="mt-10 grid gap-4 md:grid-cols-2">
-          <article class="rounded-2xl border border-white/10 bg-white/[0.06] p-6" data-reveal><span class="font-mono text-xs font-bold text-beam-cyan">01</span><h3 class="mt-5 text-xl font-bold">It writes code to work with code.</h3><p class="mt-3 leading-7 text-white/70">Beamcore can generate small functions for the task instead of only choosing from a fixed tool menu.</p></article>
-          <article class="rounded-2xl border border-white/10 bg-white/[0.06] p-6" data-reveal><span class="font-mono text-xs font-bold text-beam-cyan">02</span><h3 class="mt-5 text-xl font-bold">It shows the execution.</h3><p class="mt-3 leading-7 text-white/70">EEVA blocks, code, terminal status, and results are visible in the same product surface.</p></article>
-          <article class="rounded-2xl border border-white/10 bg-white/[0.06] p-6" data-reveal><span class="font-mono text-xs font-bold text-beam-cyan">03</span><h3 class="mt-5 text-xl font-bold">It runs where the repo lives.</h3><p class="mt-3 leading-7 text-white/70">Local-first means the real project is the input, not a sanitized product demo.</p></article>
-          <article class="rounded-2xl border border-white/10 bg-white/[0.06] p-6" data-reveal><span class="font-mono text-xs font-bold text-beam-cyan">04</span><h3 class="mt-5 text-xl font-bold">It ships without a guarantee.</h3><p class="mt-3 leading-7 text-white/70">Powerful software can do excellent work and unexpected work. That is the point of reading the source.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="warranty" class="py-16 md:py-24" aria-labelledby="warranty-title">
-      <div class="mx-auto flex w-[min(1140px,calc(100%-40px))] flex-col justify-between gap-8 rounded-3xl border border-beam-line bg-white p-8 shadow-[0_18px_56px_rgba(15,23,42,.07)] md:flex-row md:items-center" data-reveal>
-        <div class="max-w-2xl">
-          <p class="mb-3 font-mono text-[0.7rem] font-black uppercase tracking-[0.15em] text-beam-violet">No warranty</p>
-          <h2 id="warranty-title" class="text-3xl font-black leading-tight tracking-normal text-[#07080b] sm:text-5xl">Run it with your eyes open.</h2>
-          <p class="mt-5 text-lg leading-8 text-beam-muted">Beamcore can read, write, and execute code on your machine. It can produce excellent work and unexpected work. You are responsible for how you run it.</p>
-        </div>
-        <a class="inline-flex min-h-11 shrink-0 items-center justify-center rounded-xl bg-beam-violet px-5 text-sm font-bold text-white shadow-[0_10px_24px_rgba(77,61,245,.24)] transition hover:-translate-y-0.5" href="https://github.com/beamcore/agent" target="_blank" rel="noopener noreferrer">Read the source</a>
-      </div>
-    </section>
-
-    <section id="install" class="bg-white py-16 md:py-24" aria-labelledby="install-title">
-      <div class="mx-auto grid w-[min(1140px,calc(100%-40px))] items-center gap-10 lg:grid-cols-[0.8fr_1.2fr]" data-reveal>
-        <div>
-          <p class="mb-3 font-mono text-[0.7rem] font-black uppercase tracking-[0.15em] text-beam-violet">Get started</p>
-          <h2 id="install-title" class="text-3xl font-black leading-tight tracking-normal text-[#07080b] sm:text-5xl">Build the agent from source.</h2>
-          <p class="mt-5 text-lg leading-8 text-beam-muted">Beamcore is open source. Clone the agent, prepare dependencies, and launch the full-screen TUI.</p>
-          <div class="mt-7 flex flex-wrap gap-3">
-            <a class="inline-flex min-h-11 items-center justify-center rounded-xl bg-beam-violet px-5 text-sm font-bold text-white shadow-[0_10px_24px_rgba(77,61,245,.24)] transition hover:-translate-y-0.5" href="https://github.com/beamcore/agent" target="_blank" rel="noopener noreferrer">Open repository</a>
-            <a class="inline-flex min-h-11 items-center justify-center rounded-xl border border-beam-line bg-white px-5 text-sm font-bold text-[#161a22] transition hover:-translate-y-0.5" href="https://github.com/beamcore/agent/blob/main/README.md" target="_blank" rel="noopener noreferrer">Read documentation</a>
-          </div>
-        </div>
-
-        <article class="overflow-hidden rounded-2xl border border-[#2b3138] bg-[#111418] shadow-[0_24px_72px_rgba(15,23,42,.18)]" aria-label="Install from source commands">
-          <div class="flex items-center justify-between gap-4 border-b border-[#303740] px-4 py-3 font-mono text-xs text-[#cdd3dc]">
-            <span>Install from source</span>
-            <button class="rounded-lg px-3 py-2 text-[#cdd3dc] transition hover:bg-[#252b32] hover:text-white" type="button" data-copy-button data-copy-target="cmd-source"><span data-copy-label>Copy</span></button>
-          </div>
-          <pre class="overflow-x-auto p-5 font-mono text-sm leading-7 text-[#edf1f7]"><code id="cmd-source">$ git clone https://github.com/beamcore/agent.git
-$ cd agent
-$ make install
-$ beamcore</code></pre>
-          <div class="flex flex-wrap gap-3 border-t border-[#303740] px-4 py-3 font-mono text-xs text-[#8f99a6]">
-            <span>Elixir 1.18+</span>
-            <span>Erlang/OTP 27+</span>
-            <span>Git</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="bg-[#111318] px-5 py-16 text-white md:py-20" aria-labelledby="beamcore-quote-title">
-      <div class="mx-auto w-full max-w-4xl text-center" data-reveal>
-        <p id="beamcore-quote-title" class="mb-4 font-mono text-[0.7rem] font-black uppercase tracking-[0.15em] text-beam-cyan">Beamcore</p>
-        <blockquote class="text-2xl font-black leading-tight tracking-normal sm:text-4xl">
-          "Beamcore does not hide the machine. It gives the machine a voice, a memory, and a visible trail."
-        </blockquote>
-      </div>
-    </section>
-  </main>
-
-  <footer class="border-t border-white/10 bg-[#111318]">
-    <div class="mx-auto flex w-[min(1140px,calc(100%-40px))] flex-col gap-5 py-8 text-sm text-white/75 md:flex-row md:items-center md:justify-between">
-      <span>© 2026 Beamcore</span>
-      <nav class="flex flex-wrap gap-x-6 gap-y-2" aria-label="Footer navigation">
-        <a class="text-white transition hover:text-beam-cyan" href="https://github.com/beamcore/agent" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a class="text-white transition hover:text-beam-cyan" href="https://github.com/beamcore/agent/blob/main/README.md" target="_blank" rel="noopener noreferrer">Docs</a>
-        <a class="text-white transition hover:text-beam-cyan" href="#warranty">Warranty</a>
-      </nav>
-    </div>
+  <footer>
+    <a href="https://github.com/beamcore/agent">GitHub</a>
   </footer>
-  <dialog id="diagram-dialog" class="m-auto w-[calc(100%-24px)] max-w-5xl rounded-2xl border border-white/10 bg-[#111318] p-0 text-white shadow-[0_24px_72px_rgba(15,23,42,.32)] backdrop:bg-black/70" data-diagram-dialog aria-label="Expanded execution path diagram">
-    <div class="flex items-center justify-between gap-4 border-b border-white/10 px-4 py-3">
-      <span class="font-mono text-xs font-black uppercase tracking-[0.15em] text-beam-cyan">Execution path</span>
-      <button class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/10 text-lg leading-none text-white transition hover:bg-white/20" type="button" data-diagram-close aria-label="Close expanded diagram">×</button>
-    </div>
-    <div class="max-h-[82vh] overflow-auto bg-white p-2">
-      <img class="min-w-[720px] rounded-xl" src="./assets/diagrams/session-execution-contour.svg" alt="User input flows to node A and node B, then into a generated function, local execution, and result" />
-    </div>
-  </dialog>
 </body>
 </html>

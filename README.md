@@ -1,19 +1,12 @@
-# Beamcore web
+# beamcore.dev
 
-Static landing page for `beamcore.dev`.
+Frontier applications for frontier AI.
 
-## Local preview
+## Pages
 
-```bash
-python3 -m http.server 8080
-```
+- `index.html` — main page
+- `agent.html` — agent page
 
-Open `http://localhost:8080`.
+## Style
 
-## Notes
-
-- No build step is required.
-- Tailwind is compiled into `assets/css/styles.css`, so the GitHub Pages workflow does not need `node_modules`.
-- The hero terminal is HTML/CSS, not a screenshot.
-- The runtime diagram is intentionally compact: user input, two context nodes, generated function, local execution, result.
-- The install section mirrors the source-first command block style from the live site.
+Black and white. Monospace. No frameworks. No JS.
